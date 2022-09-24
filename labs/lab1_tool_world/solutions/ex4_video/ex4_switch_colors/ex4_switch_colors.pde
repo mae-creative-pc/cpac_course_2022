@@ -35,7 +35,15 @@ void copy2img(Capture camera, PImage img) {
 
 void changeColors(PImage img){
   img.loadPixels();
-  // your code here;
+  colorMode(HSB, 255);
+  for(int loc=0; loc<img.width*img.height; loc++){
+      
+    img.pixels[loc]=color(
+      (0.1 *millis()+hue(img.pixels[loc]))%256,
+      saturation(img.pixels[loc]),
+      brightness(img.pixels[loc])
+    );  
+  }
   img.updatePixels();  
 }
 

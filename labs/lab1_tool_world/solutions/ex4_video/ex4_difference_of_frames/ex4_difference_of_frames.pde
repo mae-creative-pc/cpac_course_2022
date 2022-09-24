@@ -40,6 +40,27 @@ void copy_img(PImage src, PImage dst) {
 void effectDiffFrames(PImage img){
   // your code here
   copy2img(cam, img);
+  if(first_frame){
+    copy2img(cam, old_frame);
+    first_frame=false;
+    return;    
+  }
+  img.loadPixels();
+  copy2img(cam, cur_frame);
+  colorMode(HSB, 255);
+  float normdiff=0;
+  for(int loc=0; loc<cam.width*cam.height; loc++){
+     normdiff=map(abs(cur_frame.pixels[loc]-old_frame.pixels[loc]), 0, 255*255*255, 0, 1);
+    img.pixels[loc]= color(
+            hue(img.pixels[loc]),
+            saturation(img.pixels[loc]),
+            brightness(img.pixels[loc])*normdiff);
+      
+      
+  }
+  img.updatePixels();
+  copy2img(cam, old_frame);
+  
   return;
 }
 void draw() {

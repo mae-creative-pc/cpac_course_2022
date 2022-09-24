@@ -15,7 +15,7 @@ create_playlist_url="https://api.spotify.com/v1/users/{user_id}/playlists"
 # %% Get the token
 # 1) go to https://developer.spotify.com/console/post-playlists/
 # 2) press "get token"
-# 3) remember to include playlist-modify-private 
+# 3) remember to include playlist-modify-public 
 # 4) login
 # 5) agree 
 # 6) execute this cell and give the script the token (see above)

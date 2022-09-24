@@ -15,7 +15,7 @@ create_playlist_url="https://api.spotify.com/v1/users/{user_id}/playlists"
 # %% Get the token
 # 1) go to https://developer.spotify.com/console/post-playlists/
 # 2) press "get token"
-# 3) remember to include playlist-modify-private 
+# 3) remember to include playlist-modify-public 
 # 4) login
 # 5) agree 
 # 6) execute this cell and give the script the token (see above)
@@ -47,7 +47,8 @@ shuffled_songs=your_code.sort_songs(audio_features)
 # Go to https://open.spotify.com/ , top right corner, press "Account"
 # look at your username or user_id
 name_playlist=input("What's the name of the playlist you want to create?\n")
-user_id=input("What's your username?\n")
+if "user_id" not in locals():
+    user_id=input("What's your username?\n")
 
 params={"name":name_playlist, "description": "made during cpac!"}
 
