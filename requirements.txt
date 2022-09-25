@@ -10,4 +10,5 @@ imutils
 argparse
 joblib
 pandas
+tensorflow
 scikit-learn

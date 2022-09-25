@@ -14,17 +14,14 @@ class Random_Next(Composition):
             
     def next(self):
         if self.id ==ID_START: 
-            self.id=10
-        if self.id >0:
-
-            self.midinote=int(np.random.randint(60,84))
-            self.dur =float(2**np.random.randint(-3, 0))
-            self.amp = float(np.random.choice([0,1,1,1]))
-            self.id-=1
-        else:
-            self.id=10
+            self.id=0
+        self.midinote=int(np.random.randint(60,84))
+        self.dur =float(2**np.random.randint(-3, 0))
+        self.amp = float(np.random.choice([0,1,1,1]))
+        self.id+=1
+        if self.id==10:
             self.BPM=np.random.randint(60, 120)
-            self.next()
+            self.id = 0
             
 
 if __name__=="__main__":
