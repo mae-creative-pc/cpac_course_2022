@@ -1,4 +1,6 @@
 # any import? 
+import librosa
+import numpy as np
 
 def compute_beats(y, sr):
     """This function uses librosa library to compute beats from an audio signal
@@ -18,7 +20,10 @@ def compute_beats(y, sr):
     """
     # your code here
     # suggestons: look for librosa's frames_to_samples
-    return 0
+    tempo, beats = librosa.beat.beat_track(y = y, sr = sr)
+    beat_samples = librosa.frames_to_samples(beats)
+
+    return beat_samples
 
 def add_samples(y, sample, beats):
     """Add a sample to an audio signal at given beats 
@@ -39,6 +44,10 @@ def add_samples(y, sample, beats):
     """
     y_out=y.copy()
     # your code here ...
+    s = np.zeros(y.size)
+    sample_len = sample.size
+    for i in beats:
+        s[i:i+sample_len] += sample
 
-    return y_out
+    return y_out + s
 

@@ -1,3 +1,4 @@
+#  .\cpac-venv\Scripts\Activate.ps1
 numpy
 librosa
 soundfile
