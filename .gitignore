@@ -1,1 +1,3 @@
 *.pyc
+labs/lab3_multiagent/exercises/boids_box2d/sounds/*.wav
+labs/lab3_multiagent/solutions/boids_box2d/sounds/*.wav
