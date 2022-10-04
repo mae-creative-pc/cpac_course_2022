@@ -1,4 +1,3 @@
-
 // The "Vehicle" class
 
 class Vehicle {
@@ -71,8 +70,7 @@ class Vehicle {
     vertex(-r, r*2);
     vertex(r, r*2);
     endShape(CLOSE);
-    popMatrix();
-    
+    popMatrix();    
     
   }
 }

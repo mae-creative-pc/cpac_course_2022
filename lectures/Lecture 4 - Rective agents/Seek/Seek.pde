@@ -1,5 +1,3 @@
-
-
 Vehicle v;
 
 void setup() {
