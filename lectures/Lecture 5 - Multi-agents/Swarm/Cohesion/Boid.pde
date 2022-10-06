@@ -8,6 +8,7 @@ class Boid {
   PVector velocity;
   PVector acceleration;
   float r;
+  float mass; 
   float maxforce;    // Maximum steering force
   float maxspeed;    // Maximum speed
   float cohesion_neighbordist = 300;
@@ -18,6 +19,7 @@ class Boid {
     velocity = new PVector(random(-1,1),random(-1,1));
     location = new PVector(x,y);
     r = 3.0;
+    mass = 1;
     maxspeed = 3;
     maxforce = 0.2;
   }
@@ -30,8 +32,8 @@ class Boid {
   }
 
   void applyForce(PVector force) {
-    // We could add mass here if we want A = F / M
-    acceleration.add(force);
+    PVector f = PVector.div(force,mass);  // Force/Mass
+    acceleration.add(f);
   }
 
   // We accumulate a new acceleration each time based on three rules

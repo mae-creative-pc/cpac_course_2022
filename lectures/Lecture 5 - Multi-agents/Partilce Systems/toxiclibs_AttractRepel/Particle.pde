@@ -7,14 +7,14 @@ class Particle extends VerletParticle2D {
     super(loc);
     r = 2;
     physics.addParticle(this);
-    //physics.addBehavior(new AttractionBehavior2D(this, r*3, -0.5)); //(p, distance, strength)
+    physics.addBehavior(new AttractionBehavior2D(this, r*3, -0.5)); //(p, distance, strength)
   }
 
   void display () {
     fill (127,100);
     //stroke (0);
-    //strokeWeight(2);
-    noStroke();
+    strokeWeight(2);
+    //noStroke();
     ellipse (x, y, r*2, r*2);
   }
 }

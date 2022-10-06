@@ -1,7 +1,7 @@
 
 class Particle{
   PVector location, velocity, acceleration;
-  float radius_circle, lifespan;
+  float radius_circle, lifespan, mass;
   
   Particle(PVector location, float radius_circle, float lifespan){
     this.location= location.copy();
@@ -9,20 +9,23 @@ class Particle{
     this.acceleration = new PVector();
     this.radius_circle=radius_circle;
     this.lifespan=lifespan;
+    this.mass = 1;
+    
   }
   
-  void planning(){    
+  void update(){    
     this.velocity.add(this.acceleration);
     this.location.add(this.velocity);
     this.acceleration.mult(0);
   }
   
-  void applyForce(PVector force){    
-    this.acceleration.add(force);
+  void applyForce(PVector force) {
+    PVector f = PVector.div(force,mass);  // Force/Mass
+    acceleration.add(f);
   }
   
-  void action(){
-    this.planning();    
+  void run(){
+    this.update();    
     fill(200, this.lifespan);
     noStroke();
     ellipse(this.location.x, this.location.y, this.radius_circle, this.radius_circle);    
