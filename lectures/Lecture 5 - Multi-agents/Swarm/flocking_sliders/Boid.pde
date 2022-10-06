@@ -18,12 +18,14 @@ class Boid {
   PVector vel;
   PVector acc;
   float r;
+  float mass;
 
   Boid(float x, float y) {
     acc = new PVector(0,0);
     vel = new PVector(random(-1,1),random(-1,1));
     loc = new PVector(x,y);
     r = 2.0;
+    mass = 1;
   }
 
   void run(ArrayList<Boid> boids) {
@@ -34,8 +36,8 @@ class Boid {
   }
 
   void applyForce(PVector force) {
-    // We could add mass here if we want A = F / M
-    acc.add(force);
+    PVector f = PVector.div(force,mass);  // Force/Mass
+    acc.add(f);
   }
 
   // We accumulate a new acceleration each time based on three rules
@@ -178,4 +180,3 @@ class Boid {
     return sum;
   }
 }
-

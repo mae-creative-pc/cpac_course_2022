@@ -44,6 +44,9 @@ class Blanket {
     
     //Particle middle= particles.get(5*w+50);
     //middle.lock();
+    
+    //Particle middle2= particles.get(7*w+30);
+    //middle2.lock();
   }
 
   void display() {

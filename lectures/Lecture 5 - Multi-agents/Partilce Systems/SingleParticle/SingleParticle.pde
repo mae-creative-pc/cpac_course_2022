@@ -12,7 +12,5 @@ void draw() {
   
   p.run();
   if (p.isDead()) {
-    p = new Particle(new PVector(width/2,20));
-    //println("Particle dead!"); 
   }
 }

@@ -7,6 +7,7 @@ class Vehicle {
   PVector velocity;
   PVector acceleration;
   float r;
+  float mass;
   float maxforce;    // Maximum steering force
   float maxspeed;    // Maximum speed
 
@@ -15,8 +16,14 @@ class Vehicle {
     velocity = new PVector(0,-2);
     location = new PVector(x,y);
     r = 6;
+    mass = 1;
     maxspeed = 4;
     maxforce = 0.1;
+  }
+  
+  void run(){
+    update();
+    render();
   }
 
   // Method to update location
@@ -31,7 +38,8 @@ class Vehicle {
   }
 
   void applyForce(PVector force) {
-    acceleration.add(force);
+    PVector f = PVector.div(force,mass);  // Force/Mass
+    acceleration.add(f);
   }
 
   // A method that calculates a steering force towards a target
@@ -50,13 +58,7 @@ class Vehicle {
     applyForce(steer);
   }
     
-  void display() {
-    beginShape();
-    stroke(0);
-    strokeWeight(1);
-    noFill();
-    endShape();
-    
+  void render() {
     
     // Draw a triangle rotated in the direction of velocity
     float theta = velocity.heading2D() + PI/2;
@@ -72,7 +74,5 @@ class Vehicle {
     vertex(r, r*2);
     endShape(CLOSE);
     popMatrix();
-    
-    
   }
 }

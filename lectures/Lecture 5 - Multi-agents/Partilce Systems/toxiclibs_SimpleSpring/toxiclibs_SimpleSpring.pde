@@ -12,7 +12,8 @@ Particle p1;
 Particle p2;
 
 void setup() {
-  size(800,200);
+  //size(800,200);
+  fullScreen();
   smooth();
   frameRate(30);
 
@@ -30,7 +31,7 @@ void setup() {
   p1.lock();
 
   // Make a spring connecting both Particles
-  VerletSpring2D spring=new VerletSpring2D(p1,p2,80,0.01);   //(p1,p2,len,strength)
+  VerletSpring2D spring=new VerletSpring2D(p1,p2,180,1);   //(p1,p2,len,strength)
 
   // Anything we make, we have to add into the physics world
   physics.addParticle(p1);

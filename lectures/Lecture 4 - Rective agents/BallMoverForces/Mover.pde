@@ -9,27 +9,36 @@ class Mover {
     location = new PVector(random(0,width),random(0,height));
     velocity = new PVector(0,0);
     acceleration = new PVector(0,0);
-    mass = 1;
+    mass = 3;
   }
   
   void applyForce(PVector force) {
     PVector f = PVector.div(force,mass);  // Force/Mass
     acceleration.add(f);
   }
-  
-  void update() {
+
+
+  void run(){
+    update();
+    checkEdges();
+    render(); 
+  }
+
+
+  private void update() {
     velocity.add(acceleration);
     location.add(velocity);
     acceleration.mult(0);  // Since the acceleration corresponds to the force, need to be set up to 0 each cycle
   }
 
-  void display() {
+  private void render() {
     stroke(0);
     strokeWeight(2);
     fill(127);
     ellipse(location.x,location.y,48,48);
   }
-
+  
+ 
   void checkEdges() {
 
     if (location.x > width) {
