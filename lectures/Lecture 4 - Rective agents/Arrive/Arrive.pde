@@ -21,7 +21,6 @@ void draw() {
 
     // Call the appropriate steering behaviors for our agents
     v.arrive(mouse);
-    v.update();
-    v.display();
+    v.run();
   }
 }
