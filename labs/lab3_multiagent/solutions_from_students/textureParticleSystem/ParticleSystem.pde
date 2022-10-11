@@ -3,7 +3,7 @@ class ParticleSystem{
   PVector origin;
   ParticleSystem(){
     this.particles = new ArrayList<Particle>();
-    this.origin=new PVector(width/2, height/2);
+    this.origin=new PVector(width/2, height);
   }
   ParticleSystem(PVector origin){
     this.particles = new ArrayList<Particle>();
@@ -14,16 +14,16 @@ class ParticleSystem{
   }
   void draw(){
     Particle p;
-    float small_force=0.05;
-    PVector random_force=new PVector(0,0);
+
+    PVector wind_force=new PVector(computeEnergy(),0);
     for(int i=this.particles.size()-1; i>=0; i--){
       p=this.particles.get(i);
-      random_force.x=random(-small_force, small_force);
-      random_force.y=random(-small_force, small_force);
-      p.applyForce(random_force);
+     // random_force.x=random(-small_force, small_force);
+     // random_force.y=random(-small_force, small_force);
+      p.applyForce(wind_force);
       p.update();
       p.draw();
-      p.lifespan-=0.5;
+      p.lifespan-=0.2;
       if(p.isDead()){
          particles.remove(i);
          this.addParticle();

@@ -1,5 +1,5 @@
 ParticleSystem ps;
-int Nparticles=100;
+int Nparticles=1000;
 PImage img;
 
 void setup(){
@@ -24,7 +24,7 @@ void draw(){
   background(0);
   computeEnergy();
   
-  ps.origin=new PVector(mouseX, mouseY);
+ 
   
   ps.draw();
 }

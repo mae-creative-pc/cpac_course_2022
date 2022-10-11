@@ -5,7 +5,7 @@ class Particle{
   float hue;
   Particle(PVector pos, float radius, float lifespan){
     this.pos= pos.copy();
-    this.vel = new PVector();
+    this.vel = new PVector(randomGaussian()*0.3+0,randomGaussian()*0.3-2);
     this.acc = new PVector();
     this.radius=radius;
     this.lifespan=lifespan;

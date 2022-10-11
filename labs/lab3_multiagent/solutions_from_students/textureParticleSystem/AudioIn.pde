@@ -8,15 +8,17 @@ FFT fft;
 Minim minim;
 float maxEnergy=0;
 
-void computeEnergy(){
+float computeEnergy(){
    fft.forward(this.mic.mix);
    float band_energy;
-   float rectWidth=width/fft.specSize();
-   fill(255);
+   float energy = 0;
+   //float rectWidth=width/fft.specSize();
+   //fill(255);
    for(int i=0; i<fft.specSize(); i++){
       band_energy=this.fft.getBand(i)/fft.specSize();  
-      
-      rect(i*rectWidth, height, rectWidth, max(-height, -10*height*band_energy));
-      maxEnergy=max(maxEnergy, band_energy);
+      energy += band_energy*band_energy;
+   //   rect(i*rectWidth, height, rectWidth, max(-height, -10*height*band_energy));
+    //  maxEnergy=max(maxEnergy, band_energy);
    }  
+   return energy*10;
 }
