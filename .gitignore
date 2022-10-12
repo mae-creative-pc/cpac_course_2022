@@ -1,3 +1,5 @@
 *.pyc
 labs/lab3_multiagent/exercises/boids_box2d/sounds/*.wav
 labs/lab3_multiagent/solutions/boids_box2d/sounds/*.wav
+cpac-venv\Lib\site-packages\torch\lib\dnnl.lib
+cpac-venv\Lib\site-packages\torch\lib\torch_cpu.dll
