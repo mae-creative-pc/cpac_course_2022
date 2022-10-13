@@ -9,8 +9,5 @@ void setup() {
 void draw() {
   background(255);
   
-  mover.update();
-  mover.checkEdges();
-  mover.display(); 
+  mover.run();
 }
-

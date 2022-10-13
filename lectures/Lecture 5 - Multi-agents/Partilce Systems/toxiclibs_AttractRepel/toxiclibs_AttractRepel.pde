@@ -4,15 +4,15 @@ import toxi.physics2d.behaviors.*;
 
 ArrayList<Particle> particles;
 Attractor attractor;
-//Attractor attractor2;
+Attractor attractor2;
 
 VerletPhysics2D physics;
 
 void setup () {
-  size (800, 200);
+  //size (800, 200);
+  fullScreen();
   smooth();
   physics = new VerletPhysics2D ();
-  //physics.setDrag (0.01);
   
   particles = new ArrayList<Particle>();
   for (int i = 0; i < 1000; i++) {
@@ -20,7 +20,7 @@ void setup () {
   }
   
   attractor = new Attractor(new Vec2D(width/2-100,height/2));
-  //attractor2 = new Attractor(new Vec2D(width/2,height/2));
+  attractor2 = new Attractor(new Vec2D(width/2,height/2));
 }
 
 
@@ -29,7 +29,7 @@ void draw () {
   physics.update();
 
   attractor.display();
-  //attractor2.display();
+  attractor2.display();
   for (Particle p: particles) {
     p.display();
   }

@@ -4,7 +4,8 @@ Vehicle v,v1,v2,v3,v4;
 
 
 void setup() {
-  size(800, 200);
+  //size(800, 200);
+  fullScreen();
   v = new Vehicle(width/2, height/2);
   v1 = new Vehicle(0, 0);
   v2 = new Vehicle(200, 200);
@@ -27,26 +28,15 @@ void draw() {
 
     // Call the appropriate steering behaviors for our agents
     v.arrive(mouse);
-    v.update();
-    v.display();
+    v.run();
     v1.arrive(mouse);
-    v1.update();
-    v1.display();
+    v1.run();
     v2.arrive(mouse);
-    v2.update();
-    v2.display();
-    v1.arrive(mouse);
-    v1.update();
-    v1.display();
-    v2.arrive(mouse);
-    v2.update();
-    v2.display();
+    v2.run();
     v3.arrive(mouse);
-    v3.update();
-    v3.display();
+    v3.run();
     v4.arrive(mouse);
-    v4.update();
-    v4.display();
+    v4.run();
     
   }
 }

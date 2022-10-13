@@ -9,20 +9,26 @@ class Mover {
     velocity = new PVector(random(-2, 2), random(-2, 2));
     acceleration = new PVector(0.1,-0.3);
   }
+  
+  void run(){
+    update();
+    checkEdges();
+    render(); 
+  }
 
-  void update() {
+  private void update() {
     location.add(velocity);
     velocity.add(acceleration); 
   }
 
-  void display() {
+  private void render() {
     stroke(0);
     strokeWeight(2);
     fill(127);
     ellipse(location.x, location.y, 48, 48);
   }
 
-  void checkEdges() {
+  private void checkEdges() {
 
     if (location.x > width) {
       location.x = 0;

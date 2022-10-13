@@ -11,21 +11,15 @@ void setup() {
 void draw() {
   background(255);
 
-  PVector wind = new PVector(0.1,0);
-  PVector gravity = new PVector(0,0.3);
+  PVector wind = new PVector(0.9,0.3);
+  PVector gravity = new PVector(0,0.9);
   m.applyForce(wind);
   m.applyForce(gravity);
   
   m2.applyForce(wind);
   m2.applyForce(gravity);
 
-
-  m.update();
-  m.display();
-  m.checkEdges();
-  
-  m2.update();
-  m2.display();
-  m2.checkEdges();
+  m.run();
+  m2.run();
 
 }
