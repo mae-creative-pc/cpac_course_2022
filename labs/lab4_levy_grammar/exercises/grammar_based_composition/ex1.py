@@ -6,7 +6,7 @@ from classes import Sonifier, Grammar_Sequence, metronome_grammar
 # %%
 basic_grammar={
     "S":["M", "SM"],
-    "M": [["H","H"]],    
+    "M": [["H","H"], ["q", "h", "q"]],    
     "H": ["h", ["q","q"]],
 }
 
@@ -22,7 +22,7 @@ if __name__=="__main__":
         print(" ".join(seq))
     print(f"Final sequence: {' '.join(final_sequence)}")    
     
-    S= Sonifier("sounds/cough.wav", BPM=174)
+    S= Sonifier("sounds/cymb.wav", BPM=174)
     audio_array=S.create_audio(final_sequence, add_metronome=True)
     S.write("out/"+fn_out, audio_sequence=audio_array)
 
