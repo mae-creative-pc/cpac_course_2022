@@ -180,7 +180,7 @@ class Sonifier():
             idx+=int(note*self.sr*self.m_bpm)
         if not add_metronome:            
             return self.audio_sequence
-        sample_metronome, _=librosa.load("sounds/metronome.wav", sr=self.sr)
+        sample_metronome, _=librosa.load("sounds/metronome.wav", self.sr)
         dur_quarter=self.q_bpm
         N_quarter = int(self.q_bpm*self.sr)
         sample_metronome=np.pad(sample_metronome,(0, N_quarter-sample_metronome.size))
