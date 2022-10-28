@@ -3,3 +3,5 @@ labs/lab3_multiagent/exercises/boids_box2d/sounds/*.wav
 labs/lab3_multiagent/solutions/boids_box2d/sounds/*.wav
 labs/lab4_levy_grammar/exercises/grammar_based_composition/out/*.wav
 labs/lab4_levy_grammar/solutions/grammar_based_composition/out/*.wav
+cpac-venv/Lib/site-packages/torch/lib/dnnl.lib
+cpac-venv/Lib/site-packages/torch/lib/torch_cpu.dll
