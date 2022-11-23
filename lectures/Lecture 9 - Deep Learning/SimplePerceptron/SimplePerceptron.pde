@@ -1,7 +1,7 @@
 
 
 // A list of points we will use to "train" the perceptron
-Trainer[] training = new Trainer[2000];
+Trainer[] training = new Trainer[10];
 // A Perceptron object
 Perceptron ptron;
 
