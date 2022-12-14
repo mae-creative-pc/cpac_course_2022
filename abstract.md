@@ -6,7 +6,8 @@
 - all the group members must have a github profile
 - create a github repository for your project and insert all the group members are collaborators of the repository. You can use a generic name for the repo, such as: project-cpac-2022
 - modify this abstract by filling it with the information of your group and your project. Remove this first section (this document should start with "Creative Programming and Computing" )
-- send this abstract to the teachers via the provided link. Teachers  will discuss the abstract with you and provide a new abstract with modifications
+- rename this abstract as <title_project>.md, with your title project
+- upload this abstract on https://drive.google.com/drive/folders/1O9nLathrxxEmhr2idoDZdpk69Q1EtG6R and notify the teachers. Teachers  will discuss the abstract with you and provide a new abstract with modifications
 
 Creative Programming and Computing
 A. Y. 2022-2023
